@@ -65,37 +65,63 @@ $border: 1px solid #E8E8E8;
 
 .intro {
   background: #0D0D33;
-  //max-height: ....; in px to write
+  max-height: 800px + 280px;
 }
 .intro__background {
-  background: url("../../img/intro/background-image.jpg") top/rem(1190) rem(730);//rem убрать
-  display: flex;
-  flex-direction: column;
+  background: no-repeat url("../img/intro/background-image.jpg");
+  background-size: cover;
+  background-position: top center;
+  max-width: 1190px;
+  max-height: 730px;
+  margin: 0 auto;
 }
 .wrapper {
-  max-width: rem(1190);//rem убрать
-  align-self: center;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1190px;
+}
+
+.wrapper > * {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 }
 .header {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-self: flex-start;
+  margin-bottom: $defaultOffset*30;//to divide on 150px parts
+  //and make flex container 1 - with 3 big parts
+  //and within them..you can watch video
 }
 .header__logo {
   display: flex;
-  flex: 1 1;
-  margin-top: 55px;//marin 0 top - пишем, если один
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  margin-top: 55px;
 }
 
 .logo__icon {
 }
 .logo__text {
-  margin: 8px 0 0 8px;//не исп нецелые числа
+  margin: 8px 0 0 8px;
 }
 .header__nav {
-  margin: 51px 0 0 439px;
+  margin-top: 51px;
+  margin-right: 15px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 .nav {
 }
@@ -106,20 +132,23 @@ $border: 1px solid #E8E8E8;
 }
 .menu__list {
   display: flex;
-  flex: 1 1;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
-.menu__item::after {
-  margin-top: 4px;
-}
 .menu__item {
   margin: 4px 0 0 50px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 }
 .menu__link {
   @extend %default-fontstyle;
-  @include size-lheight(rem($button-menu-size), ($base-line-height / $button-menu-size));//rem убрать
+  @include size-lheight($button-menu-size, $base-line-height);
   color: $color-white;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 
 }
 .nav__form {
@@ -129,39 +158,41 @@ $border: 1px solid #E8E8E8;
   border: $border;
   background: transparent;
   @extend %default-fontstyle;
-  @include size-lheight(rem($button-menu-size), ($button-line-height / $button-menu-size));//rem убрать
+  @include size-lheight($button-menu-size, $button-line-height);
   color: $color-white;
-  padding: rem(12) rem(15) rem(12) rem(16);//rem убрать
-  width: rem(138);//rem убрать
+  padding: 12px 15px 12px 16px;
+  max-width: 138px;
   border-radius: 4px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 
 
 }
 .intro__title {
   @extend %default-fontstyle;
-  @include size-lheight(rem($intro-title-size), ($titles-line-height / $intro-title-size));
+  @include size-lheight($intro-title-size, $titles-line-height);
   color: $color-white;
-  margin-top: 155px;
 }
 .intro__description {
   @extend %default-fontstyle;
-  @include size-lheight(rem($description-text-size), ($base-line-height / $description-text-size));//rem убрать
+  @include size-lheight($description-text-size, $base-line-height);
   color: $color-white;
   margin-top: 35px;
 
 }
 .intro__button {
-  margin: 35px 0 200px 0;
-  padding: rem(15) rem(37);//rem убрать
+  //margin: 35px 0 200px 0;
+  padding: 15px 37px;
+  max-width: 173px;
 }
 .button {
   background: $color-blue;
   border-radius: 4px;
-  display: inline-block;
 }
 .button__link {
   @extend %default-fontstyle;
-  @include size-lheight(rem($buttons-size), ($base-line-height / $buttons-size));//rem убрать
+  @include size-lheight($buttons-size, $base-line-height);
   color: $color-white;
 }
 .intro__partner {
@@ -180,17 +211,17 @@ $border: 1px solid #E8E8E8;
 }
 
 .partner__head {
-  padding: rem(46) rem(52.88) rem(37) 0rem;//rem убрать
+  padding: 46px 53px 37px 0;
 }
 .partner__title {
   @extend %default-fontstyle;
-  @include size-lheight(rem($partner-title-size), ($title2-line-height / $partner-title-size));//rem убрать
+  @include size-lheight($partner-title-size, $title2-line-height);
   color: $color-black;
   margin: 0 0;
 }
 .partner__subtitle {
   @extend %default-fontstyle;
-  @include size-lheight(1rem, ($base-line-height / 16));//rem убрать
+  @include size-lheight(16px, $base-line-height);
   color: $color-grey;
   margin-top: 1px;
 }
@@ -201,12 +232,12 @@ $border: 1px solid #E8E8E8;
 }
 .info__text {
   @extend %default-fontstyle;
-  @include size-lheight(rem($description-text-size), ($base-line-height / $description-text-size));//rem убрать
+  @include size-lheight($description-text-size, $base-line-height);
   color: $color-grey;
 }
 
 .info__text{
-  padding: 0px 0px 0px rem(20);//rem убрать
+  padding-left: 20px;
 }
 .text_1{
   padding: 0 0;
@@ -214,7 +245,7 @@ $border: 1px solid #E8E8E8;
 
 
 .text_3{
-  padding: 0px 0px 0px rem(45);//rem убрать
+  padding: 0px 0px 0px 45px;
 }
 
 .text_4{
@@ -223,7 +254,7 @@ $border: 1px solid #E8E8E8;
 
 
 .text_6{
-  padding: 0px 0px 0px rem(45);//rem убрать
+  padding-left: 45px;
 }
 
 /* Section 1 */
@@ -253,21 +284,21 @@ $where-title-line-height: 28px;
 }
 .where__title {
   @extend %default-fontstyle;
-  @include size-lheight(rem($main-title-size), ($main-title-line-height / $main-title-size));//rem убрать
+  @include size-lheight($main-title-size, $main-title-line-height);
   color: $color-black;
   text-align: center;
-  margin-top: 360px;//убрать margin - flex использовать вместо этого. margin - до 50px; position - можно.
+  //margin-top: 360px;//убрать margin - flex использовать вместо этого. margin - до 50px; position - можно.
   
 }
 .where__description {
   @extend %default-fontstyle;
-  @include size-lheight(rem($where-descr-size), $base-line-height / $where-descr-size);//rem убрать
+  @include size-lheight($where-descr-size, $base-line-height);
   color: $color-grey;
   text-align: center;
   margin-top: 35px;
 }
 .where__option-wrapper {
-  margin-top: 85px;
+  //margin-top: 85px;
   display: flex;
   justify-content: center;
   flex: 1 1;
@@ -276,18 +307,18 @@ $where-title-line-height: 28px;
   margin: 0 0;
 }
 .where__option {
-  margin-left: 100px;//flex ом уменьшить.
+  //margin-left: 100px;//flex ом уменьшить.
 }
 .where__link {
   @extend %default-fontstyle;
-  @include size-lheight(rem($where-option-size), $where-option-line-height / $where-option-size);//rem убрать
+  @include size-lheight($where-option-size, $where-option-line-height);
   color: $color-black;
 }
 .where__link_blue {
   color: $color-blue;
 }
 .where__info-wrapper {
-  margin: 50px 140px 0 140px;//убрать мардждин
+  //margin: 50px 140px 0 140px;//убрать мардждин
   display: grid;
   justify-content: center;
   grid-template: repeat(2, 220px) / repeat(2, 560px);
@@ -295,28 +326,28 @@ $where-title-line-height: 28px;
 }
 .where__info {
   border: $border;
-  padding: rem(38) rem(60) rem(41) rem(40);//rem убрать
+  padding: 38px 60px 41px 40px;
 }
 .where__info-title {
   @extend %default-fontstyle;
-  @include size-lheight(rem($where-title-size), $where-title-line-height / $where-title-size);//rem убрать
+  @include size-lheight($where-title-size, $where-title-line-height);
   color: $color-black;
 }
 .where__info-subtitle {
   @extend %default-fontstyle;
-  @include size-lheight(rem($where-subtitle-size), $base-line-height / $where-subtitle-size);//rem убрать
+  @include size-lheight($where-subtitle-size, $base-line-height);
   color: $color-grey;
   margin-top: 23px;
 }
 .where__button {
-  margin: 50px 0 150px 0;//убрать марджин
-  padding: rem(15) rem(49);//rem убрать
+  //margin: 50px 0 150px 0;//убрать марджин
+  padding: 15px 49px;
   align-self: center;
 }
 
 .button__link{
   @extend %default-fontstyle;
-  @include size-lheight(rem($buttons-size), $base-line-height / $buttons-size);//rem убрать
+  @include size-lheight($buttons-size, $base-line-height);
   color: $color-white;
 }
 
