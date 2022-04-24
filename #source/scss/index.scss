@@ -63,11 +63,13 @@ $border: 1px solid #E8E8E8;
   line-height: $line-height;
 }
 
-.intro {
+.container_dark-blue{
   background: #0D0D33;
-  max-height: 800px + 280px;
+  max-height: 800px;
+  width: 100%;
 }
-.intro__background {
+
+.main-background {
   background: no-repeat url("../img/intro/background-image.jpg");
   background-size: cover;
   background-position: top center;
@@ -78,17 +80,24 @@ $border: 1px solid #E8E8E8;
 .wrapper {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  gap: 150px;//why space-between doesn t work without gap?
   margin: 0 auto;
   max-width: 1190px;
+  max-height: 800px + 1458px;
 }
+//wrapper - contains header intro main..why space between works 
+//uncorrectly? 
 
-.wrapper > * {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-}
+//to make another flex-containers
+
+
+// .wrapper > * {
+//   flex-grow: 0;
+//   flex-shrink: 1;
+//   flex-basis: auto;
+// }
 .header {
   flex-grow: 0;
   flex-shrink: 1;
@@ -97,7 +106,8 @@ $border: 1px solid #E8E8E8;
   justify-content: space-between;
   flex-wrap: nowrap;
   justify-self: flex-start;
-  margin-bottom: $defaultOffset*30;//to divide on 150px parts
+  height: 91px;
+  //margin-bottom: $defaultOffset*30;//to divide on 150px parts
   //and make flex container 1 - with 3 big parts
   //and within them..you can watch video
 }
@@ -166,9 +176,20 @@ $border: 1px solid #E8E8E8;
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
-
-
 }
+
+.intro { //TODO
+  height: 290px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.intro__greeting { //TODO
+  background: #0D0D33;
+  max-height: 290px;
+}
+
 .intro__title {
   @extend %default-fontstyle;
   @include size-lheight($intro-title-size, $titles-line-height);
@@ -195,6 +216,13 @@ $border: 1px solid #E8E8E8;
   @include size-lheight($buttons-size, $base-line-height);
   color: $color-white;
 }
+
+.container_light-grey{
+  color: $color-light-grey;
+  max-height: 1458px;
+  width: 100%;
+}
+
 .intro__partner {
 
   margin-top: -70px;
@@ -270,6 +298,13 @@ $where-subtitle-size: 16px;
 $main-title-line-height: 50px; 
 $where-option-line-height: 38px; 
 $where-title-line-height: 28px; 
+
+.main{
+  height: 878px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
 
 .where {
   z-index: 2;

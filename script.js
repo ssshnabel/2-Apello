@@ -1,9 +1,14 @@
-function prName(name) {
-    console.log(name);
+// function prName(name) {
+//     console.log(name);
+// }
+
+// function showName(func){
+//     func();
+// }
+
+// showName(prName('Billy'));
+
+let tryIt = {
 }
 
-function showName(func){
-    func();
-}
-
-showName(prName('Billy'));
+console.log(!!tryIt);
