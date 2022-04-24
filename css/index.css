@@ -92,12 +92,13 @@ body {
   font-weight: normal;
 }
 
-.intro {
+.container_dark-blue {
   background: #0D0D33;
-  max-height: 1080px;
+  max-height: 800px;
+  width: 100%;
 }
 
-.intro__background {
+.main-background {
   background: no-repeat url("../img/intro/background-image.jpg");
   background-size: cover;
   background-position: top center;
@@ -114,23 +115,15 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 150px;
   margin: 0 auto;
   max-width: 1190px;
-}
-
-.wrapper > * {
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
+  max-height: 2258px;
 }
 
 .header {
@@ -150,7 +143,7 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   justify-self: flex-start;
-  margin-bottom: 150px;
+  height: 91px;
 }
 
 .header__logo {
@@ -246,6 +239,22 @@ body {
       flex-basis: auto;
 }
 
+.intro {
+  height: 290px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+}
+
+.intro__greeting {
+  background: #0D0D33;
+  max-height: 290px;
+}
+
 .intro__title {
   font-size: 42px;
   line-height: 50px;
@@ -273,6 +282,12 @@ body {
   font-size: 15px;
   line-height: 30px;
   color: #FFFFFF;
+}
+
+.container_light-grey {
+  color: #E5E5E5;
+  max-height: 1458px;
+  width: 100%;
 }
 
 .intro__partner {
@@ -350,6 +365,17 @@ body {
 
 /* Section 1 */
 /*  Section 2 */
+.main {
+  height: 878px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+}
+
 .where {
   z-index: 2;
   background: #FFFFFF;
